@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="holamundo:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/holamundo_jar</output-path>
+    <root id="archive" name="holamundo.jar">
+      <element id="module-output" name="holamundo" />
+    </root>
+  </artifact>
+</component>
