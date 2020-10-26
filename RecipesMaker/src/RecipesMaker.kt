@@ -1,55 +1,310 @@
-val welcomeMessage = """
-:: Bienvenido a Recipe Maker ::
+//import model.*
 
-Selecciona la opción deseada
-1. Hacer una receta
-2. Ver mis recetas
-3. Salir
-        """.trimMargin()
-fun main(args: Array<String>) {
-    repetir()
-}
+const    val opcion1 :String = "Hacer una Receta"
+const    val opcion2 : String = "Ver mis recetas"
+const    val opcion3 : String ="Salir"
 
-fun repetir(){
-    var salir = true
-    while (salir){
-        println(welcomeMessage)
-        val opcion:String? = readLine()
-        when(opcion){
-            "1" -> makeArecipe()
-            "2" -> showRecipe()
-            "3" ->  salir = false
-            else -> println("Opcion inavalida")
+
+fun main(args: Array<String>)
+{
+
+    val opciones = """
+ **    :: Bienvenido a Recipe Maker ::
+ **       Selecciona la opción deseada
+ **       1. Hacer una Receta
+ **       2. Ver mis recetas
+ **       3. Salir
+        
+    """.trimIndent()
+    println (opciones.trimMargin("**"))
+
+    do {
+
+
+        val response: String? = readLine()
+        when (response){
+            "1"-> {
+                println("Seleccionaste :$opcion1")
+                makeRecipe()
+            }
+
+            "2" -> {
+                println("Seleccionaste :$opcion2")
+                viewRecipe()
+
+
+            }
+
+            "3"  -> {
+                println("Seleccionaste :$opcion3")
+            }
+
+            else -> {
+                println("Opcion no valida")
+            }
+
+
         }
+
+    }while (!response.equals("3") )
+}
+fun makeRecipe (){
+    var recetas = listOf("Agua","Leche","Carne","Verduras","Frutas","Cereal","Huevos","Aceite")
+
+    for ((index,recetaindividual) in recetas.withIndex() )
+    {
+        println("${index.plus(1)}.$recetaindividual ")
     }
 }
-fun showRecipe(){
-    println("Lo sentimos actualmente no esta disponible")
+
+
+fun viewRecipe (){
+
+    var recetas = listOf("Agua","Leche","Carne","Verduras","Frutas","Cereal","Huevos","Aceite")
+
+    for ((index,recetaindividual) in recetas.withIndex() )
+    {
+        println("${index.plus(1)}.$recetaindividual ")
+    }
+    println ("Selecciona un Ingrediente")
+
+
+    do{
+        val response2 = readLine()
+        when (response2){
+            "1"->{
+                var cont = 0
+                println("Listado de Agua")
+                val lista =  listOf("Agua Mineral", "Agua Pura Vida","Agua Vieri")
+                for (index in lista.withIndex())
+                {
+                    cont ++
+                }
+                println(Agua(cont,lista))
+            }
+            "2" ->{
+                var cont = 0
+                println("Listado de Leches")
+                val lista =  listOf("Leche Pil", "Leche Hacendado","LLet Nostra","Leche Eroski","Leche President")
+                for (index in lista.withIndex())
+                {
+                    cont ++
+                }
+                println(Leche(cont,lista))
+            }
+            "3"->{
+
+                var cont = 0
+                println("Listado de Carnes")
+                val lista = listOf("Carne de Res","Pollo","Carne de Cardo","Carne de Oveja","Pescado","Pejerrey")
+                for (index in lista.withIndex())
+                {
+                    cont ++
+                }
+                println(Carne(cont,lista))
+            }
+            "4"->{
+                var cont = 0
+                println("Listado de Verduras")
+                val lista = listOf("Zanahoiria","Cebolla","Ajo","Perejil","Tomate","Rabano","Brocoli","Nabo")
+                for (index in lista.withIndex())
+                {
+                    cont ++
+                }
+                println(Verduras(cont,lista))
+            }
+            "5"->{
+                var cont = 0
+                println("Listado de Frutas")
+                val lista = listOf("Fresa","Platano","Uvas","Manzana","Naranja","Pera","Cereza")
+                for (index in lista.withIndex())
+                {
+                    class Verduras (cantidad:Int,lista:List<String>):Receta(cantidad) {
+                        init {
+
+
+
+                            for ((index,tipoVerdura) in lista.withIndex() )
+                            {
+                                println("${index.plus(1)}.$tipoVerdura")
+                            }
+
+
+                        }
+
+                    }
+                    cont ++
+                }
+                println(Frutas(cont,lista))
+            }
+            "6"->{
+                var cont = 0
+                println("Listado de Cereales")
+                val lista = listOf("Avena","Trigo","Arroz","Maiz")
+                for (index in lista.withIndex())
+                {
+                    cont ++
+                }
+                println(Cereal(cont,lista))
+            }
+            "7"->{
+                var cont = 0
+                println("Listado de Huevos")
+                val lista = listOf("Huevo Don Silvero","Huevo San Juan")
+                for (index in lista.withIndex())
+                {
+                    cont ++
+                }
+                println(Huevos(cont,lista))
+            }
+            "8"->{
+                var cont = 0
+                println("Listado de Aceites")
+                val lista = listOf("Aceite de nuez","Aceite Natural","Aceite sin Grasa")
+                for (index in lista.withIndex())
+                {
+                    cont ++
+                }
+                println(Aceites(cont,lista))
+            }
+            else -> {
+                println("Opcion no Valida")
+            }
+
+        }
+
+
+    }while (!response2.equals("9"))
+
 }
-fun makeArecipe(){
-    val makeRecipe = "Selecciona los ingredientes para tu receta:"
-    val ingredientes : List<String> = listOf("Agua","Leche","Carne","Verduras","Frutas","Cereal","Huevos","Aceite")
-    var volver = true
-    val receta : List<String> = listOf()
-    while (volver){
-        println(makeRecipe)
-        for (i in ingredientes){
-            println("${ingredientes.indexOf(i).plus(1)}. ${i}")
+
+class Aceites (cantidad:Int, lista :List<String>):Receta(cantidad){
+    init {2
+
+
+
+        for ((index,tipoAceite) in lista.withIndex() )
+        {
+            println("${index.plus(1)}.$tipoAceite")
         }
-        println("Ingrese 0 para salir")
-        val eleccionIngrediente:String? = readLine()
-        when(eleccionIngrediente){
-            "0" -> volver = false
-            "1" -> receta.plus("Agua")
-            "2" -> receta.plus("Leche")
-            "3" -> receta.plus("Carne")
-            "4" -> receta.plus("Verduras")
-            "5" -> receta.plus("Frutas")
-            "6" -> receta.plus("Cereal")
-            "7" -> receta.plus("Huevos")
-            "8" -> receta.plus("Aceite")
+
+
+    }
+
+}
+
+class Agua (cantidad: Int,lista:List<String>): Receta(cantidad) {
+
+    init {
+
+
+
+        for ((index,marcaAgua) in lista.withIndex() )
+        {
+            println("${index.plus(1)}.$marcaAgua")
         }
+
+
+    }
+
+}
+
+class Leche(cantidad:Int,lista:List<String>):Receta(cantidad) {
+
+    init {
+
+
+
+        for ((index,marcaLeche) in lista.withIndex() )
+        {
+            println("${index.plus(1)}.$marcaLeche")
+        }
+
+
+    }
+}
+
+class Carne (cantidad : Int, lista:List<String>):Receta(cantidad ){
+    init {
+
+
+
+        for ((index,tipoCarne) in lista.withIndex() )
+        {
+            println("${index.plus(1)}.$tipoCarne")
+        }
+
+
+    }
+
+}
+
+class Verduras (cantidad:Int,lista:List<String>):Receta(cantidad) {
+    init {
+
+
+
+        for ((index,tipoVerdura) in lista.withIndex() )
+        {
+            println("${index.plus(1)}.$tipoVerdura")
+        }
+
+
+    }
+
+}
+
+
+class Frutas (cantidad:Int, lista:List<String>):Receta(cantidad){
+    init {
+
+
+
+        for ((index,tipoFruta) in lista.withIndex() )
+        {
+            println("${index.plus(1)}.$tipoFruta")
+        }
+
+
     }
 
 
 }
+
+class Cereal (cantidad:Int,lista:List<String>):Receta(cantidad){
+
+    init {
+
+
+
+        for ((index,tipoCereal) in lista.withIndex() )
+        {
+            println("${index.plus(1)}.$tipoCereal")
+        }
+    }
+
+}
+
+class Huevos (cantidad:Int, lista :List<String>):Receta(cantidad){
+    init {
+
+
+
+        for ((index,marcaHuevo) in lista.withIndex() )
+        {
+            println("${index.plus(1)}.$marcaHuevo")
+        }
+
+
+    }
+
+}
+
+
+abstract class Receta (var cantidad: Int){
+    override fun toString(): String {
+        return "Cantidad de alimentos $cantidad"
+    }
+}
+
+
