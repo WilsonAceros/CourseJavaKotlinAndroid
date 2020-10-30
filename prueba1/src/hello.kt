@@ -1,4 +1,5 @@
 import model.Camera
+import model.Movie
 import model.Shoe
 import java.lang.Math.random
 
@@ -271,12 +272,21 @@ fun main(args: Array<String>) {
     println("Resolution: ${camera.getResolution()}")
 
 
-    var shoe = Shoe()
-    shoe.size = 33
+    var shoe = Shoe("shoe", "Blue shoe", 12345, "Praga")
+    println("Shoe: ${shoe}")
+
+    /*shoe.size = 33
     println(shoe.size)
 
     shoe.model = "Zapatos de tacon"
     println(shoe.model)
+    println(shoe.mark)*/
+
+    val movie = Movie("Coco","Pixar",120)
+    println("MOVIE")
+    println(movie.title)
+    println(movie.creator)
+    println("${movie.duration} min.")
 
 }
 
