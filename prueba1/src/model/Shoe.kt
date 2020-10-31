@@ -1,9 +1,10 @@
 package model
 
 class Shoe(name: String, description: String, sku: Int, var brand: String):
-        Product(name, description, sku) { // Clases para Datos - Data Class
+        Product(name, description, sku), ICrudActions { // Clases para Datos - Data Class
 
     override fun create(): String{
+        saludar("Hola desde create")
             return "Create shoe"
     }
 

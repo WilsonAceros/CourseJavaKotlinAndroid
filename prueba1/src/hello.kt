@@ -275,6 +275,8 @@ fun main(args: Array<String>) {
     var shoe = Shoe("shoe", "Blue shoe", 12345, "Praga")
     println("Shoe: ${shoe}")
 
+    shoe.create()
+
     /*shoe.size = 33
     println(shoe.size)
 
@@ -288,7 +290,41 @@ fun main(args: Array<String>) {
     println(movie.creator)
     println("${movie.duration} min.")
 
+    var resultado = calculadora(1,2,3, ::multiplicar)
+    println("La calculadora opero una multiplicacion: $resultado")
+
+    println("La resta fue: ${calculadora(4,5,6,::restar)}")
+
+    println("La suma fue: ${calculadora(4,5,6,::sumar)}")
+
+    // listas con llave y valor
+    val months = hashMapOf("Enero" to 1, "Diciembre" to 12)
+
+    val sorted = months.toList()
+            .sortedBy{(key,value) -> value}
+            .toMap()
+
+    println("$sorted")
+
+    //Filter
+
+    val numbersInt = listOf(4,3,2)
+    println(numbersInt.filter { it % 2 == 0 })
+
+
+    val words = listOf("Oasis","Hola", "Holanda", "Objeto")
+    println(words.filter { it.startsWith('O') })
+
 }
+
+fun calculadora(a: Int, b: Int, c: Int, operacion:(Int, Int, Int) -> Int): Int{
+    return operacion(a,b,c)
+}
+
+fun sumar(a: Int, b: Int,c: Int) = a+b+c
+fun restar(a: Int, b: Int,c: Int) = a-b-c
+fun multiplicar(a: Int, b: Int,c: Int) = a*b*c
+
 
 fun averageNumbers(numbers: IntArray, n: Int):Int{
     //Promedio numeros
