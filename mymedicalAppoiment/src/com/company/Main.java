@@ -21,6 +21,11 @@ public class Main {
 
         //showMenu();
 
+        Doctor myDoctor = new Doctor("Alejandro Rodriguez","Pediatra");
+        System.out.println(myDoctor.name);
+        System.out.println(myDoctor.speciality);
+
+
         int i=0;
         int b=2;
         b=i;
@@ -41,6 +46,11 @@ public class Main {
         System.out.println(patient.getName());
         System.out.println(patient2.getName());
 
+        patient.setWeight(60.5);
+        System.out.println(patient.getWeight());
+
+        patient.setPhoneNumber("123456795");
+        System.out.println(patient.getPhoneNumber());
     }
 
 
