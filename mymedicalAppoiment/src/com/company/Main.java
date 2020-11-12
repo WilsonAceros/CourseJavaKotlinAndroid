@@ -1,5 +1,6 @@
 package com.company;
 import static UI.UIMenu.*;
+import java.util.Date;
 
 public class Main {
 
@@ -22,9 +23,21 @@ public class Main {
         //showMenu();
 
         Doctor myDoctor = new Doctor("Alejandro Rodriguez","Pediatra");
-        System.out.println(myDoctor.name);
-        System.out.println(myDoctor.speciality);
+        myDoctor.addAvailableAppointment(new Date(), "4pm");
+        myDoctor.addAvailableAppointment(new Date(), "10am");
+        myDoctor.addAvailableAppointment(new Date(), "1pm");
 
+        for (Doctor.AvailableAppointment aA: myDoctor.getAvailableAppointments()) {
+            System.out.println(aA.getDate() + " " + aA.getTime());
+        }
+
+        //myDoctor.showName();
+
+        System.out.println(myDoctor);
+
+        Enumerations enumerar = new Enumerations();
+
+        enumerar.saveValor ();
 
         int i=0;
         int b=2;
