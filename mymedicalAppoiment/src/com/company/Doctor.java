@@ -46,7 +46,13 @@ public class Doctor extends User{
         return availableAppointments;
     }
 
-
+    @Override
+    public String toString() {
+        return super.toString()+"Doctor{" +
+                "speciality='" + speciality + '\n' +
+                ", availableAppointments=" + availableAppointments +
+                '}';
+    }
 
     public static class AvailableAppointment{
         private int id;
@@ -59,27 +65,42 @@ public class Doctor extends User{
         }
 
         public int getId() {
+
             return id;
         }
 
         public void setId(int id) {
+
             this.id = id;
         }
 
         public Date getDate() {
+
             return date;
         }
 
         public void setDate(Date date) {
+
             this.date = date;
         }
 
         public String getTime() {
+
             return time;
         }
 
         public void setTime(String time) {
+
             this.time = time;
+        }
+
+        @Override
+        public String toString() {
+            return "AvailableAppointment{" +
+                    "id=" + id + '\n' +
+                    ", date=" + date + '\n' +
+                    ", time='" + time + '\n' +
+                    '}';
         }
     }
 

@@ -22,18 +22,17 @@ public class Main {
 
         //showMenu();
 
-        Doctor myDoctor = new Doctor("Alejandro Rodriguez","Pediatra");
+        Doctor myDoctor = new Doctor("Alejandro Rodriguez","alejandro.r@gmail.com");
         myDoctor.addAvailableAppointment(new Date(), "4pm");
         myDoctor.addAvailableAppointment(new Date(), "10am");
         myDoctor.addAvailableAppointment(new Date(), "1pm");
 
+        /*
         for (Doctor.AvailableAppointment aA: myDoctor.getAvailableAppointments()) {
             System.out.println(aA.getDate() + " " + aA.getTime());
-        }
+        }*/
 
         //myDoctor.showName();
-
-        System.out.println(myDoctor);
 
         Enumerations enumerar = new Enumerations();
 
@@ -64,6 +63,10 @@ public class Main {
 
         patient.setPhoneNumber("123456795");
         System.out.println(patient.getPhoneNumber());
+
+        System.out.println(patient);
+        System.out.println(myDoctor);
+
     }
 
 
