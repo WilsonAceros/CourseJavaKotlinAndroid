@@ -1,4 +1,4 @@
-package com.company;
+package model;
 
 public class Patient extends User{
 
@@ -8,7 +8,7 @@ public class Patient extends User{
     private double height;
     private String blood;
 
-    Patient(String name, String email){
+    public Patient(String name, String email){
         super(name,email);
     }
 

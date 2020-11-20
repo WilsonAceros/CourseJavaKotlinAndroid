@@ -1,5 +1,7 @@
-package com.company;
-import static UI.UIMenu.*;
+import model.Doctor;
+import model.Enumerations;
+import model.Patient;
+
 import java.util.Date;
 
 public class Main {
