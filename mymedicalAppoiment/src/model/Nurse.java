@@ -1,6 +1,11 @@
 package model;
 
 public class Nurse extends User {
+    @Override
+    public void showDataUser() {
+        System.out.println("Empleado Hospital: Cruz Verde");
+        System.out.println("Departamento: Cancerologia, Pediatria");
+    }
 
     private String speciality;
 

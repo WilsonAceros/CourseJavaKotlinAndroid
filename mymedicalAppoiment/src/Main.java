@@ -1,13 +1,11 @@
-import model.Doctor;
-import model.Enumerations;
-import model.Patient;
+import model.*;
 
 import java.util.Date;
 
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
+        // write your code here
         /*
         Doctor myDoctor = new Doctor();
         myDoctor.name = "Alejandro Rodriguez";
@@ -24,10 +22,36 @@ public class Main {
 
         //showMenu();
 
-        Doctor myDoctor = new Doctor("Alejandro Rodriguez","alejandro.r@gmail.com");
+        Doctor myDoctor = new Doctor("Alejandro Rodriguez", "alejandro.r@gmail.com");
         myDoctor.addAvailableAppointment(new Date(), "4pm");
         myDoctor.addAvailableAppointment(new Date(), "10am");
         myDoctor.addAvailableAppointment(new Date(), "1pm");
+
+        User user = new Doctor("Wilson","wilson@gmail");
+        user.showDataUser();
+
+        User userPa = new Patient("Jesica","jesica@gmail.com");
+        userPa.showDataUser();
+
+        User user1 = new User("Wilson","wilson@com.co") {
+            @Override
+            public void showDataUser() {
+                System.out.println("Doctor");
+                System.out.println("Hospital: Cruz");
+                System.out.println("Departamente: Pediatria");
+
+            }
+        };
+
+        user1.showDataUser();
+        IShedulable iShedulable = new IShedulable() {
+            @Override
+            public void shedule(Date date, String time) {
+
+            }
+        };
+
+        IShedulable iShedulable1 = new AppointmentDoctor();
 
         /*
         for (Doctor.AvailableAppointment aA: myDoctor.getAvailableAppointments()) {

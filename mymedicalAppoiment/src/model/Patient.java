@@ -1,6 +1,11 @@
 package model;
 
 public class Patient extends User{
+    @Override
+    public void showDataUser() {
+        System.out.println("Paciente");
+        System.out.println("Historial completo desde naciemiento");
+    }
 
     //Atributos
     private String birthday;

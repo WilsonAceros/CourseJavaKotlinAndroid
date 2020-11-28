@@ -4,6 +4,11 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class Doctor extends User{
+    @Override
+    public void showDataUser() {
+        System.out.println("Empleado Hospital: Cruz Roja");
+        System.out.println("Departamento: Cancerologia");
+    }
 
     private String speciality;
 
@@ -38,7 +43,7 @@ public class Doctor extends User{
     }*/
 
     ArrayList<AvailableAppointment> availableAppointments = new ArrayList<>();
-    public void addAvailableAppointment(Date date, String time){
+    public void addAvailableAppointment(String date, String time){
         availableAppointments.add(new Doctor.AvailableAppointment(date,time));
     }
 
