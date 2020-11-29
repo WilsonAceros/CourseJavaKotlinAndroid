@@ -1,10 +1,12 @@
 import model.*;
 
+import java.text.ParseException;
 import java.util.Date;
+import static UI.UIMenu.*;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ParseException {
         // write your code here
         /*
         Doctor myDoctor = new Doctor();
@@ -20,7 +22,8 @@ public class Main {
         System.out.println(Doctor.id);
         */
 
-        //showMenu();
+        showMenu();
+        /*
 
         Doctor myDoctor = new Doctor("Alejandro Rodriguez", "alejandro.r@gmail.com");
         myDoctor.addAvailableAppointment(new Date(), "4pm");
@@ -59,6 +62,7 @@ public class Main {
         }*/
 
         //myDoctor.showName();
+        /*
 
         Enumerations enumerar = new Enumerations();
 
@@ -92,8 +96,7 @@ public class Main {
 
         System.out.println(patient);
         System.out.println(myDoctor);
-
+        */
     }
-
 
 }
